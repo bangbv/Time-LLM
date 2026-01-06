@@ -13,6 +13,7 @@ import time
 import random
 import numpy as np
 import os
+import cpuinfo
 
 os.environ['CURL_CA_BUNDLE'] = ''
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:64"
