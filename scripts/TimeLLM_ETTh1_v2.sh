@@ -1,4 +1,4 @@
-accelerate launch run_main.py --num_processes 1 \
+accelerate launch run_main.py \
     --is_training 0 \
     --task_name long_term_forecast \
     --model_id ETTh1_512_96 \
