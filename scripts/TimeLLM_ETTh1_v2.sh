@@ -1,15 +1,14 @@
-accelerate launch run_main.py \
-    --is_training 0 \
+accelerate launch --num_processes 1 --mixed_precision bf16 run_main.py \
+    --is_training 1 \
     --task_name long_term_forecast \
     --model_id ETTh1_512_96 \
-    --model_comment "inference" \
     --model TimeLLM \
     --data ETTh1 \
     --root_path ./dataset/ETT-small/ \
     --data_path ETTh1.csv \
     --llm_model LLAMA \
     --llm_dim 4096 \
-    --llm_layers 32 \
+    --llm_layers 6 \
     --seq_len 512 \
-    --label_len 48 \ 
-    --pred_len 96
+    --label_len 48 --pred_len 97 \
+    --model_comment "training"
