@@ -1,0 +1,15 @@
+accelerate launch run_main.py --num_processes 1 \
+    --is_training 0 \
+    --task_name long_term_forecast \
+    --model_id ETTh1_512_96 \
+    --model_comment "inference" \
+    --model TimeLLM \
+    --data ETTh1 \
+    --root_path ./dataset/ETT-small/ \
+    --data_path ETTh1.csv \
+    --llm_model LLAMA \
+    --llm_dim 4096 \
+    --llm_layers 32 \
+    --seq_len 512 \
+    --label_len 48 \ 
+    --pred_len 96
